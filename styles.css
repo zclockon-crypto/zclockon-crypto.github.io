@@ -219,10 +219,10 @@ h2::after {
 }
 
 .about-intro {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: var(--text-dark);
-    line-height: 2;
-    margin-bottom: 50px;
+    line-height: 1.8;
+    margin-bottom: 60px;
     padding: 30px;
     background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
     border-radius: 10px;
@@ -241,34 +241,56 @@ h2::after {
 
 .highlights-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
 }
 
 .highlight-item {
-    padding: 25px;
-    background: var(--bg-light);
+    background: white;
     border-radius: 10px;
-    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
-    cursor: pointer;
 }
 
 .highlight-item:hover {
-    background: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
 }
 
-.highlight-icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+.highlight-image {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.highlight-text {
-    font-size: 1.1rem;
+.highlight-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
+}
+
+.highlight-content {
+    padding: 20px;
+}
+
+.highlight-content h4 {
+    font-size: 1.2rem;
     color: var(--text-dark);
-    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.highlight-content p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 .about-journey {
@@ -621,7 +643,7 @@ h2::after {
     }
 
     .about-intro {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .highlights-grid {
@@ -679,7 +701,7 @@ h2::after {
     }
 
     .about-intro {
-        font-size: 1rem;
+        font-size: 0.95rem;
         padding: 20px;
     }
 }
