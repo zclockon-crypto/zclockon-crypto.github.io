@@ -71,6 +71,7 @@ body {
     font-weight: 500;
     transition: var(--transition);
     position: relative;
+    font-size: 0.95rem;
 }
 
 .nav-links a::after {
@@ -181,25 +182,16 @@ body {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* 关于部分 */
-.about {
-    padding: 100px 20px;
-    background-color: var(--bg-white);
-}
-
-.about h2,
-.projects h2,
-.contact h2 {
+/* 通用标题样式 */
+h2 {
     font-size: 3rem;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     color: var(--text-dark);
     position: relative;
 }
 
-.about h2::after,
-.projects h2::after,
-.contact h2::after {
+h2::after {
     content: '';
     display: block;
     width: 100px;
@@ -208,77 +200,143 @@ body {
     margin: 20px auto 0;
 }
 
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.about-text p {
-    font-size: 1.1rem;
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
     color: var(--text-light);
-    margin-bottom: 20px;
-    line-height: 1.8;
+    margin-bottom: 50px;
 }
 
-.skills-list {
-    list-style: none;
-    margin-top: 20px;
+/* 我是谁部分 */
+.about {
+    padding: 100px 20px;
+    background-color: var(--bg-white);
 }
 
-.skills-list li {
-    padding: 10px 0;
-    font-size: 1.1rem;
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-intro {
+    font-size: 1.3rem;
     color: var(--text-dark);
-    transition: var(--transition);
+    line-height: 2;
+    margin-bottom: 50px;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
 }
 
-.skills-list li:hover {
-    transform: translateX(10px);
-    color: var(--primary-color);
+.about-highlights {
+    margin-bottom: 60px;
 }
 
-.about-stats {
+.about-highlights h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+}
+
+.highlights-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
-.stat-card {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 40px 20px;
+.highlight-item {
+    padding: 25px;
+    background: var(--bg-light);
     border-radius: 10px;
     text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.highlight-item:hover {
+    background: white;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.highlight-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.highlight-text {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.about-journey {
+    margin-top: 60px;
+}
+
+.about-journey h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+}
+
+.journey-items {
+    display: grid;
+    gap: 20px;
+}
+
+.journey-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: var(--bg-light);
+    border-radius: 10px;
     transition: var(--transition);
 }
 
-.stat-card:hover {
-    transform: translateY(-10px);
+.journey-item:hover {
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-.stat-number {
-    font-size: 2.5rem;
-    font-weight: bold;
+.journey-dot {
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
 }
 
-.stat-label {
-    margin-top: 10px;
-    opacity: 0.9;
+.journey-content h4 {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 5px;
 }
 
-/* 项目部分 */
-.projects {
+.journey-content p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* 工作项目部分 */
+.work-projects {
     padding: 100px 20px;
     background-color: var(--bg-light);
 }
 
+/* 兴趣项目部分 */
+.interest-projects {
+    padding: 100px 20px;
+    background-color: var(--bg-white);
+}
+
+/* 项目网格 */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .project-card {
@@ -287,6 +345,10 @@ body {
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
+}
+
+.work-projects .project-card {
+    background-color: var(--bg-light);
 }
 
 .project-card:hover {
@@ -324,25 +386,43 @@ body {
 }
 
 .project-info {
-    padding: 30px;
+    padding: 25px;
 }
 
 .project-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
     color: var(--text-dark);
 }
 
 .project-description {
     color: var(--text-light);
     margin-bottom: 20px;
+    font-size: 0.95rem;
     line-height: 1.6;
+}
+
+.project-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.metric {
+    display: inline-block;
+    padding: 6px 12px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+    color: var(--primary-color);
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
 .project-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 20px;
 }
 
@@ -351,8 +431,8 @@ body {
     padding: 5px 12px;
     background-color: var(--bg-light);
     color: var(--primary-color);
-    border-radius: 20px;
-    font-size: 0.85rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
     font-weight: 500;
 }
 
@@ -364,29 +444,92 @@ body {
 .project-link {
     flex: 1;
     padding: 10px 15px;
-    background-color: var(--bg-light);
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: white;
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
     font-weight: 500;
+    font-size: 0.9rem;
     transition: var(--transition);
 }
 
 .project-link:hover {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--secondary-color);
     transform: translateY(-2px);
 }
 
 .project-link.demo {
     background-color: transparent;
     border: 2px solid var(--primary-color);
+    color: var(--primary-color);
 }
 
 .project-link.demo:hover {
     background-color: var(--primary-color);
+    color: white;
     border-color: var(--primary-color);
+}
+
+/* AI知识库部分 */
+.knowledge-base {
+    padding: 100px 20px;
+    background-color: var(--bg-light);
+}
+
+.knowledge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.knowledge-card {
+    background-color: var(--bg-white);
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.knowledge-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+}
+
+.knowledge-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.knowledge-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.knowledge-card p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.knowledge-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.knowledge-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
 /* 联系部分 */
@@ -447,6 +590,18 @@ body {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
     }
 
     .hamburger {
@@ -461,18 +616,16 @@ body {
         font-size: 1.2rem;
     }
 
-    .about h2,
-    .projects h2,
-    .contact h2 {
+    h2 {
         font-size: 2rem;
     }
 
-    .about-content {
-        grid-template-columns: 1fr;
+    .about-intro {
+        font-size: 1.1rem;
     }
 
-    .about-stats {
-        grid-template-columns: 1fr;
+    .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .projects-grid {
@@ -488,6 +641,10 @@ body {
         width: 100%;
         max-width: 300px;
         justify-content: center;
+    }
+
+    .knowledge-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -505,17 +662,24 @@ body {
         font-size: 0.9rem;
     }
 
-    .about h2,
-    .projects h2,
-    .contact h2 {
+    h2 {
         font-size: 1.5rem;
     }
 
     .project-info {
-        padding: 20px;
+        padding: 15px;
     }
 
     .nav-links {
         gap: 15px;
+    }
+
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-intro {
+        font-size: 1rem;
+        padding: 20px;
     }
 }
