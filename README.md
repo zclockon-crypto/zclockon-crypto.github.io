@@ -1,2 +1,2 @@
 # zclockon-crypto.github.io
-ersonal portfolio showcasing AI projects
+Personal portfolio showcasing AI projects
