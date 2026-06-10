@@ -289,15 +289,12 @@ h2::after {
     left: 0;
     right: 0;
     padding: 30px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.7), transparent);
     color: white;
     z-index: 3;
-    transform: translateY(20px);
-    transition: var(--transition);
-}
-
-.capability-card:hover .capability-content {
-    transform: translateY(0);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .capability-content h3 {
